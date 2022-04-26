@@ -1,3 +1,12 @@
+# TO DO
+create a pipeline (from preprocessing to trajectories) in monocole 3 (.Rmd) (Francesco)
+
+create a pipeline (from preprocessing to trajectories) in Seurat (.Rmd)
+# Sofware pereqiuisites
+R software 
+R packages
+
+
 # scRNAseq_Hackathon
 
 https://conferences.leeds.ac.uk/bad-hackathon/programme/
