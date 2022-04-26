@@ -11,6 +11,8 @@ https://satijalab.org/seurat/index.html
 
 https://github.com/gambalab/scRNAseq_chapter/blob/master/pipelines/seurat_pipe.md
 
+http://htmlpreview.github.io/?https://github.com/satijalab/seurat-wrappers/blob/master/docs/monocle3.html
+
 ****
 ## Datasets
 https://www.nature.com/articles/s41586-018-0590-4
