@@ -6,6 +6,10 @@ https://conferences.leeds.ac.uk/bad-hackathon/programme/
 ## Monocole 3 Pipelines
 http://cole-trapnell-lab.github.io/monocle-release/monocle3/#tutorial-1-learning-trajectories-with-monocle-3
 https://cole-trapnell-lab.github.io/monocle3/docs/installation/
+
+http://cole-trapnell-lab.github.io/monocle-release/monocle3/#step-3-partition-the-cells-into-supergroups
+
+
 ## Seurat Pipelines
 https://satijalab.org/seurat/index.html
 
