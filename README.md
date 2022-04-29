@@ -39,3 +39,5 @@ PREPROCESSING AND TRAJECTORIES
 
 https://cole-trapnell-lab.github.io/monocle3/docs/trajectories/#pre-process
 
+http://bioconductor.org/books/3.14/OSCA.advanced/trajectory-analysis.html (Main example dataset to be converted into a text file to be loaded in our pipelines)
+
