@@ -7,7 +7,7 @@ create a pipeline (from preprocessing to trajectories) in Seurat (.Rmd) (Annamar
 create a required packages and software installation list:
 
 
-R software: Latest R version
+R software: Latest R version (4.1.3 onwards) https://www.r-project.org/
 
 R packages:
 
@@ -27,6 +27,7 @@ BiocManager::install("DropletUtils")
 install.packages("remotes")
 remotes::install_github("chris-mcginnis-ucsf/DoubletFinder")
 ```
+* Monocle3
 
 # scRNAseq_Hackathon
 
