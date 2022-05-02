@@ -41,3 +41,4 @@ https://cole-trapnell-lab.github.io/monocle3/docs/trajectories/#pre-process
 
 http://bioconductor.org/books/3.14/OSCA.advanced/trajectory-analysis.html (Main example dataset to be converted into a text file to be loaded in our pipelines)
 
+http://bioconductor.org/books/3.14/OSCA.workflows/bach-mouse-mammary-gland-10x-genomics.html
