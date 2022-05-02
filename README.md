@@ -4,7 +4,7 @@ create a pipeline (from preprocessing to trajectories) in monocole 3 (.Rmd) (Fra
 
 create a pipeline (from preprocessing to trajectories) in Seurat (.Rmd) (Annamaria)
 ## Sofware pereqiuisites
-create a required packages and software installation list:
+Required packages and software installation list:
 
 
 ### R software: 
