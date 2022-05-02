@@ -22,7 +22,11 @@ if (!require("BiocManager", quietly = TRUE))
 
 BiocManager::install("DropletUtils")
 ```
-* Seurat
+* DoubletFinder
+```
+install.packages("remotes")
+remotes::install_github("chris-mcginnis-ucsf/DoubletFinder")
+```
 
 # scRNAseq_Hackathon
 
