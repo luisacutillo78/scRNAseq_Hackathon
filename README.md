@@ -9,11 +9,11 @@ create a required packages and software installation list:
 
 ### R software: 
 * Latest R version (4.1.3 onwards) https://www.r-project.org/
-* Rstudio https://www.rstudio.com/
+* Rstudio (optional) https://www.rstudio.com/
 
 ### R packages:
 
-open R and run
+open R\Rstudio and run the codes highlighted
 
 * Seurat
  ```
