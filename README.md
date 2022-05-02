@@ -7,10 +7,22 @@ create a pipeline (from preprocessing to trajectories) in Seurat (.Rmd) (Annamar
 create a required packages and software installation list:
 
 
-R software 
+R software: Latest R version
 
-R packages
+R packages:
 
+* Seurat
+ ```
+ install.pakages("Seurat")
+ ```
+* DropletUtils
+```
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("DropletUtils")
+```
+* Seurat
 
 # scRNAseq_Hackathon
 
