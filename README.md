@@ -7,9 +7,13 @@ create a pipeline (from preprocessing to trajectories) in Seurat (.Rmd) (Annamar
 create a required packages and software installation list:
 
 
-R software: Latest R version (4.1.3 onwards) https://www.r-project.org/
+### R software: 
+* Latest R version (4.1.3 onwards) https://www.r-project.org/
+* Rstudio https://www.rstudio.com/
 
-R packages:
+### R packages:
+
+open R and run
 
 * Seurat
  ```
@@ -28,7 +32,24 @@ install.packages("remotes")
 remotes::install_github("chris-mcginnis-ucsf/DoubletFinder")
 ```
 * Monocle3
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+install.packages("BiocManager")
+BiocManager::install(version = "3.10")
+# Next, install a few Bioconductor dependencies that aren't automatically installed:
 
+BiocManager::install(c('BiocGenerics', 'DelayedArray', 'DelayedMatrixStats',
+                       'limma', 'S4Vectors', 'SingleCellExperiment',
+                       'SummarizedExperiment', 'batchelor', 'Matrix.utils'))
+# Now, install monocle3 through the cole-trapnell-lab GitHub, execute:
+
+install.packages("devtools")
+devtools::install_github('cole-trapnell-lab/leidenbase')
+devtools::install_github('cole-trapnell-lab/monocle3')
+# If you wish to install the develop branch of monocle3, execute:
+
+devtools::install_github('cole-trapnell-lab/monocle3', ref="develop")
+```
 # scRNAseq_Hackathon
 
 https://conferences.leeds.ac.uk/bad-hackathon/programme/
