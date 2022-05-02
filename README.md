@@ -13,7 +13,7 @@ create a required packages and software installation list:
 
 ### R packages:
 
-open R\Rstudio and run the codes highlighted
+open R\Rstudio and run the code highlighted
 
 * Seurat
  ```
