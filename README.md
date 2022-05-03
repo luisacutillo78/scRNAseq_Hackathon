@@ -3,6 +3,14 @@
 create a pipeline (from preprocessing to trajectories) in monocole 3 (.Rmd) (Francesco)
 
 create a pipeline (from preprocessing to trajectories) in Seurat (.Rmd) (Annamaria)
+
+# Data Availability
+Please download:
+1. [emptyDroplets_doublet_filtered_tabulamuris_mtx.rds](https://drive.google.com/file/d/1TLYPcawqbtqApGDTXUZuwE9BJDpeUbPX/view?usp=sharing)
+2. [Tabulamuris_cmd.txt](https://drive.google.com/file/d/1ngJ45fOzgY6pm9gNZdCKjXdG7lmJmY03/view?usp=sharing)
+3. [Tabulamuris_genes.txt](https://drive.google.com/file/d/1L3IGc59iVLwT2HE7sGBu3R_DhzjxT7oF/view?usp=sharing)
+
+
 ## Sofware pereqiuisites
 Required packages and software installation list:
 
