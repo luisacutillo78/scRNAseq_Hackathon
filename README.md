@@ -11,7 +11,7 @@ Please download:
 3. [Tabulamuris_genes.txt](https://drive.google.com/file/d/1L3IGc59iVLwT2HE7sGBu3R_DhzjxT7oF/view?usp=sharing)
 
 
-## Sofware pereqiuisites
+## Sofware perequisites
 Required packages and software installation list:
 
 
@@ -21,12 +21,12 @@ Required packages and software installation list:
 
 ### R packages:
 
-open R\Rstudio and run the code highlighted
+Open R\Rstudio and run the code highlighted
 
 * Seurat
  ```
- install.pakages("Seurat")
- devtools::install_github('satijalab/seurat-data')
+install.pakages("Seurat")
+devtools::install_github('satijalab/seurat-data')
 remotes::install_github('satijalab/seurat-wrappers')
  ```
 * DropletUtils
