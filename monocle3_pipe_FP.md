@@ -25,11 +25,13 @@ if(!require(monocle3))
 ```
 
 
-## 2. We load into the R environment the downloaded Tabula Muris datasets
+## 2. We load into the R environment C. Elegans embryo datasets from Packer & Zhu et al.
 
 ```R
 # Load data
-
+expression_matrix <- readRDS(url("http://staff.washington.edu/hpliner/data/packer_embryo_expression.rds"))
+cell_metadata <- readRDS(url("http://staff.washington.edu/hpliner/data/packer_embryo_colData.rds"))
+gene_annotation <- readRDS(url("http://staff.washington.edu/hpliner/data/packer_embryo_rowData.rds"))
 ```
 
 ## 3. Gene Filtering and normazlization
@@ -37,8 +39,10 @@ Data normalization addresses the unwanted biases arisen by count depth variabili
 
 ```R
 # Gene filtering and data normalization
-cds <- new_cell_data_set(as(mtx, "sparseMatrix"),cell_metadata = cell_metadata,gene_metadata = gene_metadata)
-rm(mtx);gc()
+cds <- new_cell_data_set(expression_matrix,
+                         cell_metadata = cell_metadata,
+                         gene_metadata = gene_annotation)
+rm(expression_matrix);gc()
 ```
 
 ## 4. Data summarization & Dimensionality Reduction
@@ -47,6 +51,7 @@ Dimensionality reduction aims to condense the complexity of the data into a lowe
 ```R
 # PCA for data summarization
 cds <- preprocess_cds(cds, num_dim = 50)
+cds <- align_cds(cds, alignment_group = "batch", residual_model_formula_str = "~ bg.300.loading + bg.400.loading + bg.500.1.loading + bg.500.2.loading + bg.r17.loading + bg.b01.loading + bg.b02.loading")
 
 # Dimensionality reduction with UMAP 
 cds <- reduce_dimension(cds) #dimensionality reduction, default value is UMAP
@@ -55,48 +60,41 @@ cds <- reduce_dimension(cds) #dimensionality reduction, default value is UMAP
 
 ## 5. Clustering Analysis: how to identify cellular sub-populations
 As transcriptionally distinct populations of cells usually correspond to distinct cell types, a key goal of scRNA-seq consists in the identification of cell subpopulations based on their transcriptional similarity. Thus, organizing cells into groups (i.e. clusters) can allow for de novo detection of cell types or identification of different subpopulations in a single cell state.
+Although cells may continuously transition from one state to the next with no discrete boundary between them, Monocle does not assume that all cells in the dataset descend from a common transcriptional "ancestor". In many experiments, there might in fact be multiple distinct trajectories. Therefore, Monocle assignes each cell not only to a cluster but also to a partition. When you are learning trajectories, each partition will eventually become a separate trajectory.
 
 ```R
 # Identify clusters
 cds = cluster_cells(cds, cluster_method="louvain") #cell clustering using louvain algorithm
 ```
 
-## 6. Trajectory analysis: Partition cells into supergroups
-Rather than forcing all cells into a single developmental trajectory, Monocle 3 enables you to learn a set of trajectories that describe the biological process you are studying.
-
-```R
-# Partition cells
-cds <- partitionCells(cds) #separate cells into supergroups to enable trajectory inference for each population
-```
-
-## 7. Trajectory analysis: Learn the principal graph
+## 6. Trajectory analysis: Learn the principal graph
 Once cells are paritioned, each supergroup can be organized into a separate trajectory. The default method for doing this in Monocle 3 is SimplePPT, which assumes that each trajectory is a tree (albeit one that may have multiple roots). Finally, each cell will be assigned with a pseudotime value. In order to do so, you need to specify the root nodes of the trajectory graph. If you do not provide them as an argument, it will launch a graphical user interface for selecting one or more root nodes.
 
 ```R
 # Learn the trajectories
-cds <- learnGraph(cds,  RGE_method = 'SimplePPT') #trajectory inference using SimplePPT
+cds <- learnGraph(cds) #trajectory inference using SimplePPT
 
 # Helper function to identify the root principal points:
-get_correct_root_state <- function(cds, cell_phenotype, root_type){
-  cell_ids <- which(pData(cds)[, cell_phenotype] == root_type)
+get_earliest_principal_node <- function(cds,cell_phenotype="embryo.time.bin",time_bin="130-170"){
+  cell_ids <- which(colData(cds)[, cell_phenotype] == time_bin)
   
   closest_vertex <-
-    cds@auxOrderingData[[cds@rge_method]]$pr_graph_cell_proj_closest_vertex
+  cds@principal_graph_aux[["UMAP"]]$pr_graph_cell_proj_closest_vertex
   closest_vertex <- as.matrix(closest_vertex[colnames(cds), ])
   root_pr_nodes <-
-    V(cds@minSpanningTree)$name[as.numeric(names
-                                           (which.max(table(closest_vertex[cell_ids,]))))]
+  igraph::V(principal_graph(cds)[["UMAP"]])$name[as.numeric(names
+  (which.max(table(closest_vertex[cell_ids,]))))]
   
   root_pr_nodes
 }
 
 # Assign pseudotime value
-node_ids = get_correct_root_state(cds,cell_phenotype = 'cell_type', root_type = "cell_type_1") #where cell_phenotypes indicates the column where cell types are stored, while root_type is the cell_type we want to select.
-cds <- orderCells(cds, root_pr_nodes = node_ids)
+node_ids = get_correct_root_state(cds,cell_phenotype = "embryo.time.bin", time_bin ="130-170") #where cell_phenotypes indicates the column where cell types are stored, while root_type is the cell_type we want to select.
+cds <- order_cells(cds, root_pr_nodes = node_ids)
 ```
 
 
-## 8. Plots
+## 7. Plots
 ```R
 plot_cells(cds,
            color_cells_by = "pseudotime", #change here to color cells by the metadata of choice
