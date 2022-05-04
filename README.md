@@ -24,10 +24,12 @@ Required packages and software installation list:
 
 Open R\Rstudio and run the code highlighted
 
-* Devools and Remotes
+* Devools, Remotes R build tools
  ```
 install.packages("devtools")
 install.packages("remotes")
+install.packages("pkgbuild")
+pkgbuild::check_build_tools()
 ```
 * Seurat
 ```
