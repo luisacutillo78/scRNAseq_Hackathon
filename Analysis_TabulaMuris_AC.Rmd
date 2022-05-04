@@ -124,9 +124,6 @@ Here, we set the resolution parameter to 0.5
 ```{r}
 tabmur <- FindNeighbors(tabmur, dims = 1:50)
 tabmur <- FindClusters(tabmur, resolution = 0.5)
- 
-```
-```{r}
 table(Idents(tabmur))
 ```
 
