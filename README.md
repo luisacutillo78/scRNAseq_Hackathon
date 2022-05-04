@@ -61,7 +61,6 @@ BiocManager::install(c('BiocGenerics', 'DelayedArray', 'DelayedMatrixStats',
                        'SummarizedExperiment', 'batchelor', 'Matrix.utils'))
 # Now, install monocle3 through the cole-trapnell-lab GitHub, execute:
 
-install.packages("devtools")
 devtools::install_github('cole-trapnell-lab/leidenbase')
 devtools::install_github('cole-trapnell-lab/monocle3')
 # If you wish to install the develop branch of monocle3, execute:
