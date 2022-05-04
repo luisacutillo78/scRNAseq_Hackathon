@@ -51,6 +51,9 @@ remotes::install_github("chris-mcginnis-ucsf/DoubletFinder")
 if (!requireNamespace("BiocManager", quietly = TRUE))
 install.packages("BiocManager")
 BiocManager::install(version = "3.10")
+# Error: Bioconductor version '3.10' requires R version '3.6'; use
+#  `BiocManager::install(version = '3.14')` with R version 4.1; see
+# https://bioconductor.org/install
 # Next, install a few Bioconductor dependencies that aren't automatically installed:
 
 BiocManager::install(c('BiocGenerics', 'DelayedArray', 'DelayedMatrixStats',
