@@ -26,7 +26,7 @@ Open R\Rstudio and run the code highlighted
 
 * Seurat
  ```
-install.pakages("Seurat")
+install.packages("Seurat")
 devtools::install_github('satijalab/seurat-data')
 remotes::install_github('satijalab/seurat-wrappers')
  ```
