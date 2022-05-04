@@ -8,7 +8,7 @@ if(!require(monocle3))
 {
   if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-  BiocManager::install(version = "3.10")
+  #BiocManager::install(version = "3.10")
   
   BiocManager::install(c('BiocGenerics', 'DelayedArray', 'DelayedMatrixStats',
                          'limma', 'S4Vectors', 'SingleCellExperiment',
