@@ -72,7 +72,7 @@ Once cells are paritioned, each supergroup can be organized into a separate traj
 
 ```R
 # Learn the trajectories
-cds <- learnGraph(cds) #trajectory inference using SimplePPT
+cds <- learn_graph(cds) #trajectory inference using SimplePPT
 
 # Helper function to identify the root principal points:
 get_earliest_principal_node <- function(cds,cell_phenotype="embryo.time.bin",time_bin="130-170"){
