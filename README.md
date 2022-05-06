@@ -1,6 +1,6 @@
 # Pipelines
 
-* [Seurat Pipeline (Rmd format)](https://github.com/luisacutillo78/scRNAseq_Hackathon/blob/main/Analysis_TabulaMuris_AC.Rmd)
+* [Seurat Pipeline (Rmd format)](https://github.com/luisacutillo78/scRNAseq_Hackathon/blob/main/Analysis_TabulaMuris_AC_2.Rmd)
 * [Monocle 3 Pipeline (md format)](https://github.com/luisacutillo78/scRNAseq_Hackathon/blob/main/monocle3_pipe_FP.md)
 
 
