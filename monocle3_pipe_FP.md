@@ -89,7 +89,7 @@ get_correct_root_state <- function(cds,cell_phenotype="embryo.time.bin",time_bin
 }
 
 # Assign pseudotime value
-node_ids = get_correct_root_state(cds,cell_phenotype = "embryo.time.bin", time_bin ="130-170") #where cell_phenotypes indicates the column where cell types are stored, while root_type is the cell_type we want to select.
+node_ids = get_correct_root_state(cds,cell_phenotype = "embryo.time.bin", time_bin ="130-170") #where cell_phenotype indicates the column where cell types are stored, while time_bin is the cell type/state we want to select.
 cds <- order_cells(cds, root_pr_nodes = node_ids)
 ```
 
