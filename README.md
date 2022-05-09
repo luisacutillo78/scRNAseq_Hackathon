@@ -1,4 +1,5 @@
 # Pipelines
+During the day we will follow 2 pipelines:
 
 * [Seurat Pipeline (Rmd format)](https://github.com/luisacutillo78/scRNAseq_Hackathon/blob/main/Analysis_TabulaMuris_AC_2.Rmd)
 * [Monocle 3 Pipeline (md format)](https://github.com/luisacutillo78/scRNAseq_Hackathon/blob/main/monocle3_pipe_FP.md)
@@ -48,7 +49,7 @@ BiocManager::install("DropletUtils")
 ```
 remotes::install_github("chris-mcginnis-ucsf/DoubletFinder")
 ```
-* Monocle3
+* Monocle3 installation on Windows OS
 ```
 if (!requireNamespace("BiocManager", quietly = TRUE))
 install.packages("BiocManager")
@@ -68,6 +69,36 @@ devtools::install_github('cole-trapnell-lab/monocle3')
 
 devtools::install_github('cole-trapnell-lab/monocle3', ref="develop")
 ```
+* Monocle3 installation on macOS Monterey Chip M1
+
+R version 4.2.0 (2022-04-22)
+
+Platform: aarch64-apple-darwin20 (64-bit)
+
+Running under: macOS Monterey 12.3.1
+
+1 - Install Xcode from the Appstore (it requires some time, almost one hour with good connection)
+2 - After Xcode is installed, accept the license and the installation of additional components
+3 - Open the terminal and run the command 'xcode-select --install' (almost 15/20 minutes)
+
+Ignore "xcode-select: error: command line tools are already installed, use "Software Update" to install updates". It means that it is already installed.
+
+4 - Download gfortran from https://github.com/fxcoudert/gfortran-for-macOS/releases/tag/11-arm-alpha2 (M1 processor) or from https://github.com/fxcoudert/gfortran-for-macOS/releases (Intel processor). The user-friendly installation package is gfortran-ARM-11.0-BigSur.pkg
+5 - Click on the .pkg file to install gfortan in /usr/local/bin
+6 - In the home directory, create a hidden directory called .R and create inside a file called 'Makevars'. In this file, write:
+```
+F77 = /usr/local/bin/gfortran
+FC = $(F77)
+FLIBS = -L/usr/local/gfortran/lib/gcc/aarch64-apple-darwin20.2.0
+```
+Check for the correspondence with your path, it might change from user to user.
+
+7 - Proceed with Monocle3 installation and select 'no' at the following question:
+
+Do you want to install from sources the packages which need compilation? (Yes/no/cancel)
+
+
+
 # scRNAseq_Hackathon
 
 https://conferences.leeds.ac.uk/bad-hackathon/programme/
