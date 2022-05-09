@@ -49,9 +49,6 @@ BiocManager::install("DropletUtils")
 remotes::install_github("chris-mcginnis-ucsf/DoubletFinder")
 ```
 * Monocle3
-
-** MacOS users
-
 ```
 if (!requireNamespace("BiocManager", quietly = TRUE))
 install.packages("BiocManager")
