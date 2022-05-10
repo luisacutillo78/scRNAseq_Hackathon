@@ -31,7 +31,7 @@ Open R\Rstudio and run the code highlighted
 install.packages("devtools")
 install.packages("remotes")
 install.packages("pkgbuild")
-install.packages("mclast")
+install.packages("mclust")
 pkgbuild::check_build_tools()
 ```
 * Seurat
