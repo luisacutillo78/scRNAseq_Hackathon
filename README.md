@@ -99,18 +99,14 @@ Check for the correspondence with your path, it might change from user to user.
 Do you want to install from sources the packages which need compilation? (Yes/no/cancel)
 
 ****
-## Monocole 3 Pipelines
+## Monocole 3 Original Pipelines
 http://cole-trapnell-lab.github.io/monocle-release/monocle3/#tutorial-1-learning-trajectories-with-monocle-3
-
-https://cole-trapnell-lab.github.io/monocle3/docs/installation/
 
 http://cole-trapnell-lab.github.io/monocle-release/monocle3/#step-3-partition-the-cells-into-supergroups
 
 
-## Seurat Pipelines
+## Seurat Original Pipelines
 https://satijalab.org/seurat/index.html
-
-https://github.com/gambalab/scRNAseq_chapter/blob/master/pipelines/seurat_pipe.md
 
 http://htmlpreview.github.io/?https://github.com/satijalab/seurat-wrappers/blob/master/docs/monocle3.html
 
