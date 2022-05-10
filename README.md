@@ -14,7 +14,7 @@ Please download the following folder:
 * [Datasets Drive Folder](https://drive.google.com/drive/folders/1eP16g-thyNZ-wTZwu24IPKB5uRWWYFIn?usp=sharing)
 
 
-## Sofware perequisites
+## Sofware prerequisites
 Required packages and software installation list:
 
 
