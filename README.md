@@ -1,3 +1,7 @@
+# This repository contains the istructions and material for the scRNAseq Hackathon, School of Mathematics, University of Leeds, 12/05/2022
+
+* https://conferences.leeds.ac.uk/bad-hackathon/programme/
+
 # Pipelines
 During the day we will follow 2 pipelines:
 
@@ -5,12 +9,9 @@ During the day we will follow 2 pipelines:
 * [Monocle 3 Pipeline (md format)](https://github.com/luisacutillo78/scRNAseq_Hackathon/blob/main/Pipeline2_monocle3.md)
 
 
-
 # Data Availability
-Please download:
-1. [emptyDroplets_doublet_filtered_tabulamuris_mtx.rds](https://drive.google.com/file/d/1TLYPcawqbtqApGDTXUZuwE9BJDpeUbPX/view?usp=sharing)
-2. [Tabulamuris_cmd.txt](https://drive.google.com/file/d/1ngJ45fOzgY6pm9gNZdCKjXdG7lmJmY03/view?usp=sharing)
-3. [Tabulamuris_genes.txt](https://drive.google.com/file/d/1L3IGc59iVLwT2HE7sGBu3R_DhzjxT7oF/view?usp=sharing)
+Please download the following folder:
+* [Datasets Drive Folder](https://drive.google.com/drive/folders/1eP16g-thyNZ-wTZwu24IPKB5uRWWYFIn?usp=sharing)
 
 
 ## Sofware perequisites
@@ -97,15 +98,10 @@ Check for the correspondence with your path, it might change from user to user.
 
 Do you want to install from sources the packages which need compilation? (Yes/no/cancel)
 
-
-
-# scRNAseq_Hackathon
-
-https://conferences.leeds.ac.uk/bad-hackathon/programme/
-
 ****
 ## Monocole 3 Pipelines
 http://cole-trapnell-lab.github.io/monocle-release/monocle3/#tutorial-1-learning-trajectories-with-monocle-3
+
 https://cole-trapnell-lab.github.io/monocle3/docs/installation/
 
 http://cole-trapnell-lab.github.io/monocle-release/monocle3/#step-3-partition-the-cells-into-supergroups
@@ -118,22 +114,4 @@ https://github.com/gambalab/scRNAseq_chapter/blob/master/pipelines/seurat_pipe.m
 
 http://htmlpreview.github.io/?https://github.com/satijalab/seurat-wrappers/blob/master/docs/monocle3.html
 
-****
-## Datasets
 
-https://drive.google.com/drive/folders/1eP16g-thyNZ-wTZwu24IPKB5uRWWYFIn?usp=sharing
-
-
-PREPROCESSING ONLY
-
-https://www.nature.com/articles/s41586-018-0590-4
-
-https://tabula-muris.ds.czbiohub.org/
-
-PREPROCESSING AND TRAJECTORIES
-
-https://cole-trapnell-lab.github.io/monocle3/docs/trajectories/#pre-process
-
-http://bioconductor.org/books/3.14/OSCA.advanced/trajectory-analysis.html (Main example dataset to be converted into a text file to be loaded in our pipelines)
-
-http://bioconductor.org/books/3.14/OSCA.workflows/bach-mouse-mammary-gland-10x-genomics.html
