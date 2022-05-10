@@ -1,6 +1,6 @@
 # Monocle3 Example
 
-## 1. First we install all the necessary packages.
+## 1. First we install all the necessary packages and load the library.
 Additional information on possible errors during installation process can be found [HERE](https://cole-trapnell-lab.github.io/monocle3/docs/installation/)
 
 ```R
@@ -22,6 +22,9 @@ if(!require(monocle3))
   
   library(monocle3)
 }
+
+library(Seurat)
+library(SeuratWrappers)
 ```
 
 
@@ -34,12 +37,20 @@ cell_metadata <- readRDS(url("http://staff.washington.edu/hpliner/data/packer_em
 gene_annotation <- readRDS(url("http://staff.washington.edu/hpliner/data/packer_embryo_rowData.rds"))
 ```
 
-## 3. Gene Filtering and normazlization
+## 3. Gene/Cell Filtering and normazlization
+Genes and cells are filtered in Seurat, then we move to Monocle3 to proceed with the analysis.
 Data normalization addresses the unwanted biases arisen by count depth variability while preserving true biological differences.
 
 ```R
 # Gene filtering and data normalization
-cds <- new_cell_data_set(expression_matrix,
+seu_data <- CreateSeuratObject(counts = expression_matrix, project = "elegans_embryo", min.cells = round(dim(expression_matrix)[2]*5/100), min.features = 0, meta.data=cell_metadata)
+seu_data[["percent.mt"]] <- PercentageFeatureSet(seu_data, pattern = "^mt-")
+
+seu_data <- subset(seu_data, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
+
+cds <- as.cell_data_set(seu_data)
+
+#cds <- new_cell_data_set(expression_matrix,
                          cell_metadata = cell_metadata,
                          gene_metadata = gene_annotation)
 rm(expression_matrix);gc()
