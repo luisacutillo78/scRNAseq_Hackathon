@@ -1,4 +1,4 @@
-# This repository contains the istructions and material for the scRNAseq Hackathon, School of Mathematics, University of Leeds, 12/05/2022
+# This repository contains istructions and material for the scRNAseq Hackathon, School of Mathematics, University of Leeds, 12/05/2022
 
 * https://conferences.leeds.ac.uk/bad-hackathon/programme/
 
@@ -31,6 +31,7 @@ Open R\Rstudio and run the code highlighted
 install.packages("devtools")
 install.packages("remotes")
 install.packages("pkgbuild")
+install.packages("mclast")
 pkgbuild::check_build_tools()
 ```
 * Seurat
