@@ -2,14 +2,14 @@
 
 * https://conferences.leeds.ac.uk/bad-hackathon/programme/
 
-# Pipelines
+## Pipelines
 During the day we will follow 2 pipelines:
 
 * [Seurat Pipeline (md format)](https://github.com/luisacutillo78/scRNAseq_Hackathon/blob/main/Pipeline1_Analysis_TabulaMuris.md)
 * [Monocle 3 Pipeline (md format)](https://github.com/luisacutillo78/scRNAseq_Hackathon/blob/main/Pipeline2_monocle3.md)
 
 
-# Data Availability
+## Data Availability
 Please download the following folder:
 * [Datasets Drive Folder](https://drive.google.com/drive/folders/1eP16g-thyNZ-wTZwu24IPKB5uRWWYFIn?usp=sharing)
 
