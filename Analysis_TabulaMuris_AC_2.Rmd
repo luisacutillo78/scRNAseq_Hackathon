@@ -31,7 +31,7 @@ library(SeuratWrappers)
 tabData=readRDS("emptyDroplets_doublet_filtered_tabulamuris_mtx.rds")
 info=readRDS("tabulamuris_cell_info.rds")
 tabmur <- CreateSeuratObject(counts = tabData, project = "tabulamuris", min.cells = round(dim(tabData)[2]*5/100), min.features = 0, meta.data=info)
-#tabmur2 <- CreateSeuratObject(counts = tabData, project = "tabulamuris", min.cells = round(dim(tabData)[2]*5/100), min.features = 0, meta.data=info)
+
 
 tabmur
 tabmur[["RNA"]]@counts[1:4,1:4]
@@ -42,18 +42,24 @@ hist(Matrix::colSums(tabData), xlab="Total Counts", breaks=100,  ylab="Number of
 
 
 ```{r}
+#tabmur[["percent.mt"]] <- PercentageFeatureSet(tabmur, pattern = "^mt-")
 
 plot1 <- VlnPlot(tabmur, features = c("nFeature_RNA"), ncol=1)
 plot1
 plot2 <- VlnPlot(tabmur, features = c("nCount_RNA"), ncol = 1)
 plot2
+
+#plot4 <- VlnPlot(tabmur, features = c("percent.mt"), ncol = 1)
+#plot4
+
 plot3 <- FeatureScatter(tabmur, feature1 = "nCount_RNA", feature2 = "nFeature_RNA", group.by = "tissue")
 plot3
+
 ```
 
 ```{r}
 
-#tabmur <- subset(tabmur, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 )
+#tabmur <- subset(tabmur, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
 #tabmur
 ```
 
