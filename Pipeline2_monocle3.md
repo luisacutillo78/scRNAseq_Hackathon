@@ -1,6 +1,6 @@
 # Monocle3 Example
 
-## 1. We load into the R environment C. Elegans embryo datasets from Packer & Zhu et al.
+## 1. We load into the R environment Nestrowa or Pbmc Data (based on the assignment)
 
 ```R
 # Load data
