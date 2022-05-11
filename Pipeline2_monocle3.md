@@ -4,7 +4,7 @@
 
 ```R
 # Load data
-data="" # Based on the assignment, one of "Nestrowa.rds" or "PbmcData.rds"
+data <- "" # Based on the assignment, one of "Nestrowa.rds" or "PbmcData.rds"
 expression_matrix <- readRDS(data)
 ```
 
@@ -82,7 +82,7 @@ get_correct_root_state <- function(cds,cell_phenotype,cell_type){
 }
 
 # Assign pseudotime value
-node_ids = get_correct_root_state(cds,cell_phenotype = "clusters_louvain", cell_type = 1) #where cell_phenotype indicates the column where cell types are stored, while cell_type is the cell type/state we want to select. Try with the cluster of your choice6
+node_ids <- get_correct_root_state(cds,cell_phenotype = "clusters_louvain", cell_type = 1) #where cell_phenotype indicates the column where cell types are stored, while cell_type is the cell type/state we want to select. Try with the cluster of your choice6
 cds <- order_cells(cds, root_pr_nodes = node_ids)
 ```
 
