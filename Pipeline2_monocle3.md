@@ -32,7 +32,7 @@ Dimensionality reduction aims to condense the complexity of the data into a lowe
 cds <- preprocess_cds(cds, num_dim = 50)
 
 # Dimensionality reduction with UMAP 
-cds <- reduce_dimension(cds, reduction_method = 'UMAP') #dimensionality reduction, default value is UMAP
+cds <- reduce_dimension(cds, reduction_method = 'UMAP') #dimensionality reduction
 ```
 
 
