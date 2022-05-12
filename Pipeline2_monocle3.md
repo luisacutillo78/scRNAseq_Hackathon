@@ -60,7 +60,7 @@ plot_cells(cds,
            graph_label_size=1.5)
 ```
 
-## 5. Trajectory analysis: Learn the principal graph
+## 5. Trajectory analysis: Learn the principal graph and assign Pseudotime
 Once cells are paritioned, each supergroup can be organized into a separate trajectory. The default method for doing this in Monocle 3 is SimplePPT, which assumes that each trajectory is a tree (albeit one that may have multiple roots). Finally, each cell will be assigned with a pseudotime value. In order to do so, you need to specify the root nodes of the trajectory graph.
 
 ```R
